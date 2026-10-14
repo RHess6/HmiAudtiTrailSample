@@ -1,0 +1,129 @@
+{
+  "$schema": "../../TcHmiSrv/schema/ExtensionSettings.Schema.json",
+  "version": "24.0.7.0",
+  "configVersion": "1.0.1.2",
+  "guid": "713EC6CF-3C7D-4061-BB8C-85C04825D1A4",
+  "visibility": "AlwaysShow",
+  "policies": [
+    "StrictPropertyValidation"
+  ],
+  "symbols": {
+    "ListSymbols": {
+      "readValue": {
+        "function": true
+      }
+    },
+    "GetSchema": {
+      "writeValue": {
+        "type": "string"
+      },
+      "readValue": {
+        "function": true
+      }
+    },
+    "Diagnostics": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "allOf": [
+          {
+            "function": true
+          },
+          {
+            "oneOf": [
+              {
+                "versions": [
+                  1.0
+                ],
+                "type": "object",
+                "properties": {
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "versions": [
+                  2.0
+                ],
+                "type": "object",
+                "properties": {
+                  "domainState": {
+                    "propertyOrder": 2,
+                    "type": "string",
+                    "enum": [
+                      "Good",
+                      "Bad"
+                    ]
+                  },
+                  "domainError": {
+                    "propertyOrder": 3,
+                    "type": "string",
+                    "format": "multiline"
+                  },
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "packageVersion": "24.0.7",
+  "productVersion": "24.0.7",
+  "signature": "j5m8FSoF0pEcKCPOR+VZwyjRPxYZc7PLf1JcP46g9fULOK47nR3VDWyIVLWWg9BPmvIb54nHClZm/v6nta48149ac6rlnU882oMVzmco5qi94r3UX3CGyrmu3RpN1KkvkwE5MruTOCY1xzf5MRZfF1hq5IAk+4Sdk/E5eI6Npc0kI7j0RpMTb5hPUZdCxk4b8oB8W3VipF3GHlaNMdhbVh7+SSfBg45Z44aaP1c+Wy64vZTuza2rkLF/rjXBRRfEpJIJv5/8Zk9lRz+eGkmQ12LxaXeZRTK3PaNlijjemx5o3e4dwRLN/xjPYt5p25ld+8Lmd3VpCbG4WUF4yghX4A=="
+}

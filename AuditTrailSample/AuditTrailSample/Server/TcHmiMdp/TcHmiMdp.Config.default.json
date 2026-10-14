@@ -1,0 +1,10 @@
+{
+    "targetSystems": {
+        "Local": {
+            "address": "199.4.42.250.1.1",
+            "enabled": true,
+            "readOnly": false
+        }
+    },
+    "timeout": "PT1S"
+}

@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <DUT Name="tea" Id="{3deb03eb-6095-44ca-85a3-1787ae1f3249}">
+    <Declaration><![CDATA[TYPE tea :
+STRUCT
+
+Name			: STRING;
+Price			: REAL;
+ingredients		: STRING;	
+
+
+END_STRUCT
+END_TYPE
+]]></Declaration>
+  </DUT>
+</TcPlcObject>

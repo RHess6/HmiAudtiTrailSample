@@ -1,0 +1,36 @@
+{
+    "ADDED_GROUPS_CACHE": {},
+    "APPEND_DOMAIN_DURING_LOGIN": "",
+    "AUTHENTICATION_MECHANISM": "Simple",
+    "BASE_DN": "",
+    "BIND_USER_AUTHENTICATION_MECHANISM": "None",
+    "BIND_USER_DN": "",
+    "BIND_USER_PASSWORD": "",
+    "BLOCK_USERS": {
+        "LIST": [],
+        "USE_WHITELISTING": false,
+        "WHITELIST_ACCOUNTS_AFFECTED_BY_GROUP_MAPPINGS": false
+    },
+    "CASE_SENSITIVE_ATTRIBUTE_VALUE_COMPARISON": false,
+    "GROUP_MAPPINGS": [
+        {
+            "HMI_GROUP": "__SystemUsers",
+            "LDAP_ATTRIBUTE_NAME": "",
+            "LDAP_ATTRIBUTE_VALUE": ""
+        }
+    ],
+    "HOST": "",
+    "IGNORE_DOMAIN_SUFFIX_DURING_LOGIN": false,
+    "LDAP_OPT_REFERRALS": false,
+    "PORT": 389,
+    "SYNC_INTERVAL": "PT0S",
+    "TIMEOUT": "PT10S",
+    "TRUST_ALL_CERTIFICATES": false,
+    "USERNAME_ATTRIBUTE": "userPrincipalName",
+    "USER_FILTER": "(&({username_attribute}={input})(objectClass=person))",
+    "USE_LDAP_SEARCH_FOR_LISTUSERS": false,
+    "USE_TLS": false,
+    "VISIBLE_ATTRIBUTES": [],
+    "extensionHostMaxReloads": 10,
+    "extensionHostReloadInterval": "PT10S"
+}

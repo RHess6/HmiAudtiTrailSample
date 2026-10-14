@@ -1,0 +1,135 @@
+{
+    "auditTrailSymbols": {
+        "ADS.PLC1.MAIN.tempVar": {
+            "commentRequired": false,
+            "enabled": true,
+            "mappingData": [
+                "OPTIONS"
+            ],
+            "symbolData": ""
+        },
+        "ADS.PLC1.gvl.teas.Name": {
+            "commentRequired": false,
+            "enabled": true,
+            "mappingData": [],
+            "symbolData": ""
+        },
+        "ADS.PLC1.gvl.teas.Price": {
+            "commentRequired": false,
+            "enabled": true,
+            "mappingData": [],
+            "symbolData": ""
+        },
+        "ADS.PLC1.gvl.teas.ingredients": {
+            "commentRequired": false,
+            "enabled": true,
+            "mappingData": [],
+            "symbolData": ""
+        },
+        "ADS.PLC1.gvl.test": {
+            "commentRequired": false,
+            "enabled": true,
+            "mappingData": [],
+            "symbolData": ""
+        }
+    },
+    "blockCommandsOnError": false,
+    "configPageMaxEntries": 200,
+    "createEventOnAudit": false,
+    "databaseConnection": {
+        "connectionString": "Server=localhost; Port=5432; Database=postgres; Uid=postgres; Pwd=@{password};Timeout=10;",
+        "password": "AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAKvB3qZ7B20ObFROixcCqRgAAAAAeAAAARQBuAGMAcgB5AHAAdABlAGQAIABkAGEAdABhAAAAEGYAAAABAAAgAAAAYIHFpGjoju8PvB4R7yRgpaxjPcQ0UvOyLkZ+EAR7PnwAAAAADoAAAAACAAAgAAAAOFCmRdGyr6U6nXTHxtgDCM56ekAs8ld+/1t+IRygn4AQAAAAdR25N3Zyo2U4UlSbI8QDrUAAAABoSiT+QOcaq3Jv3x4VLmY9YG4ZPS108XX38V5KeorLQ8HsLjZJHOSVoEbxjQbGtgprXhpn2wWSGIzqT15nrQXr",
+        "tableId": 1
+    },
+    "databaseMaxEntries": 15000,
+    "eventFilters": {
+        "auditTrailDatabaseReset": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "auditTrailDatabaseReset"
+                }
+            ]
+        },
+        "auditTrailErrorLogMessage": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "auditTrailErrorLogMessage"
+                }
+            ]
+        },
+        "authFailed": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "AUTH_FAILED"
+                },
+                {
+                    "logic": "AND"
+                },
+                {
+                    "comparator": "==",
+                    "path": "payload::params::persistPreviousSession",
+                    "value": false
+                }
+            ]
+        },
+        "customAuditTrailLogEntry": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "AuditLogEntry"
+                }
+            ]
+        },
+        "login": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "LOGIN_LOG"
+                },
+                {
+                    "logic": "AND"
+                },
+                {
+                    "comparator": "==",
+                    "path": "payload::params::persistPreviousSession",
+                    "value": false
+                }
+            ]
+        },
+        "logout": {
+            "enabled": true,
+            "filter": [
+                {
+                    "comparator": "==",
+                    "path": "name",
+                    "value": "LOGOUT_LOG"
+                },
+                {
+                    "logic": "AND"
+                },
+                {
+                    "comparator": "!=",
+                    "path": "payload::params::reason",
+                    "value": "PersistPreviousSession"
+                }
+            ]
+        }
+    },
+    "maxErrorLogSize": 2097152,
+    "minCommentLength": 0,
+    "remainingDatabaseEntriesHintLimit": 10,
+    "signatureKey": "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"
+}

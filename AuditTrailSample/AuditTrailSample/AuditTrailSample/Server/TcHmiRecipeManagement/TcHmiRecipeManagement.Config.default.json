@@ -1,0 +1,82 @@
+{
+    "recipeList": {},
+    "recipeTypeList": {
+        "coffee": {
+            "members": {
+                "ADS.PLC1.gvl.coffees.fPrice": {
+                    "defaultValue": 10.0,
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.fPrice",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.coffees.sIngredients": {
+                    "defaultValue": "'coffee'",
+                    "enabled": true,
+                    "group": "",
+                    "order": 1,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.sIngredients",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.coffees.sName": {
+                    "defaultValue": "'Cold Brew'",
+                    "enabled": true,
+                    "group": "",
+                    "order": 2,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.sName",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        },
+        "tea": {
+            "members": {
+                "ADS.PLC1.gvl.teas.Name": {
+                    "defaultValue": "Match",
+                    "enabled": true,
+                    "group": "",
+                    "order": 1,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.Name",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.teas.Price": {
+                    "defaultValue": 5.99,
+                    "enabled": true,
+                    "group": "",
+                    "order": 2,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.Price",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.teas.ingredients": {
+                    "defaultValue": "matcha, hot water, ice, milk, banana flavor",
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.ingredients",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        }
+    },
+    "recipeVersioningEnabled": false
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TcPlcObject Version="1.1.0.1">
+  <GVL Name="gvl" Id="{2a5719ea-eefe-42f9-8590-5791d8ba29d3}">
+    <Declaration><![CDATA[{attribute 'qualified_only'}
+VAR_GLOBAL
+	
+coffees 			: coffee;
+teas				: tea;
+
+
+END_VAR]]></Declaration>
+  </GVL>
+</TcPlcObject>

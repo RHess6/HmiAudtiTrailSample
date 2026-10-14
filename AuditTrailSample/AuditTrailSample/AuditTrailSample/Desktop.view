@@ -1,0 +1,460 @@
+<div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Content" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Content" data-tchmi-min-height="100" data-tchmi-min-height-unit="%">
+  <div id="ViewDesktopBeckhoffLogo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-src="Images/Beckhoff_Logo.svg" data-tchmi-left="20" data-tchmi-top="20" data-tchmi-width="194" data-tchmi-height="57"></div>
+<div id="TcHmiAuditTrailGrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.AuditTrailUtils.TcHmiAuditTrailGrid" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="647" data-tchmi-left-unit="px" data-tchmi-server-interval="1000" data-tchmi-show-menu-bar="True" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="1009" data-tchmi-width-unit="px">
+<script data-tchmi-target-attribute="data-tchmi-filter" type="application/json">
+[]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-columns" type="application/json">
+[
+  {
+    "columnData": "timestamp",
+    "width": 240,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "id",
+    "width": 50,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 50,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Center",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "name",
+    "width": 160,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "oldValue",
+    "width": 160,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 80,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Center",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "newValue",
+    "width": 160,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 80,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Center",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "userName",
+    "width": 240,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 70,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Center",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  },
+  {
+    "columnData": "error::reason",
+    "width": 320,
+    "widthUnit": "px",
+    "resize": true,
+    "minWidth": 100,
+    "minWidthUnit": "px",
+    "horizontalAlignment": "Left",
+    "verticalAlignment": "Center",
+    "headerHorizontalAlignment": "Center",
+    "headerVerticalAlignment": "Center",
+    "ignoreEscapeSequences": false
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-sorting" type="application/json">
+[
+  {
+    "name": "timestamp",
+    "order": "Descending"
+  }
+]
+</script>
+<script data-tchmi-target-attribute="data-tchmi-cell-content-padding" type="application/json">
+{
+  "left": 3,
+  "leftUnit": "px",
+  "right": 3,
+  "rightUnit": "px",
+  "top": 0,
+  "topUnit": "px",
+  "bottom": 0,
+  "bottomUnit": "px"
+}
+</script>
+
+</div>
+<div id="TcHmiRecipeEdit_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="215" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="272" data-tchmi-top-unit="px" data-tchmi-width="446" data-tchmi-width-unit="px">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onRecipeModified",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%recipe%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%TcHmiRecipeManagement.Config::recipeList%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUser%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%GetCurrentUser::name%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUserGroup%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%%s%TcHmiSrv.GetCurrentUser.groups%/s%.join(',')%/f%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "const recipe = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
+          "const user = TcHmi.Symbol.read('currentUser', TcHmi.SymbolType.Internal)",
+          "const groups = TcHmi.Symbol.read('currentUserGroup', TcHmi.SymbolType.Internal)",
+          "",
+          "TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
+          "    {",
+          "        name: 'recipe modified/saved',",
+          "        contextDomain: 'TcHmiRecipeManagement',",
+          "        comment: '',",
+          "        data: { oldRecipes: recipe, changedRecipe: ctx.args[0], user: user, userGroups: groups}",
+          "    },",
+          "    null,",
+          "    (data) => {",
+          "    }",
+          ");"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onEditStarted",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%recipe%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%TcHmiRecipeManagement.Config::recipeList%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUser%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%GetCurrentUser::name%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUserGroup%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%%s%TcHmiSrv.GetCurrentUser.groups%/s%.join(',')%/f%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "const recipe = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
+          "const user = TcHmi.Symbol.read('currentUser', TcHmi.SymbolType.Internal)",
+          "const groups = TcHmi.Symbol.read('currentUserGroup', TcHmi.SymbolType.Internal)",
+          "",
+          "TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
+          "    {",
+          "        name: 'Recipe selected to be edited',",
+          "        contextDomain: 'TcHmiRecipeManagement',",
+          "        comment: '',",
+          "        data: { recipeSelected: ctx.args[0], oldRecipes: recipe, user: user, userGroups: groups}",
+          "    },",
+          "    null,",
+          "    (data) => {",
+          "    }",
+          ");",
+          "",
+          ""
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  },
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onRecipeCreated",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%recipe%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%TcHmiRecipeManagement.Config::recipeList%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUser%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%GetCurrentUser::name%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%currentUserGroup%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%f%%s%TcHmiSrv.GetCurrentUser.groups%/s%.join(',')%/f%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "const recipe = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
+          "const user = TcHmi.Symbol.read('currentUser', TcHmi.SymbolType.Internal)",
+          "const groups = TcHmi.Symbol.read('currentUserGroup', TcHmi.SymbolType.Internal)",
+          "",
+          "TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
+          "    {",
+          "        name: 'recipe created',",
+          "        contextDomain: 'TcHmiRecipeManagement',",
+          "        comment: '',",
+          "        data: { createdRecipe: ctx.args[0], oldRecipes: recipe, user: user, userGroups: groups}",
+          "    },",
+          "    null,",
+          "    (data) => {",
+          "    }",
+          ");"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]
+</script>
+</div>
+<div id="TcHmiButton_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="224" data-tchmi-left-unit="px" data-tchmi-text="Get Recipe List" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "WriteToSymbol",
+        "active": true,
+        "symbolExpression": "%i%recipe%/i%",
+        "value": {
+          "objectType": "Symbol",
+          "valueType": "tchmi:general#/definitions/String",
+          "symbolExpression": "%s%TcHmiRecipeManagement.Config::recipeList%/s%"
+        },
+        "asyncWait": true
+      },
+      {
+        "objectType": "JavaScript",
+        "active": true,
+        "sourceLines": [
+          "//const recipes = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
+          "",
+          "//console.log(recipes)",
+          "",
+          "/*TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
+          "    {",
+          "        name: 'recipe saved',",
+          "        contextDomain: 'TcHmiRecipeManagement',",
+          "        comment: '',",
+          "        data: ctx.args[0]",
+          "    },",
+          "    null,",
+          "    (data) => {",
+          "    }",
+          ");",
+          "",
+          "*/"
+        ],
+        "asyncWait": true,
+        "waitMode": "Synchronous"
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="TcHmiTextbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="115" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-top="87" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="330" data-tchmi-width-unit="px" data-tchmi-text="%i%recipe%/i%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-word-wrap="True" data-tchmi-multiline="True">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+<div id="TcHmiButton_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="334" data-tchmi-left-unit="px" data-tchmi-text="Button" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
+
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+  {
+    "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
+    "actions": [
+      {
+        "objectType": "Condition",
+        "active": true,
+        "parts": [
+          {
+            "if": [
+              {
+                "compare1": {
+                  "objectType": "Symbol",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "symbolExpression": "%s%ADS.PLC1.MAIN.tempVar%/s%"
+                },
+                "compare2": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "compareOperator": "==",
+                "logic": null
+              }
+            ],
+            "then": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC1.MAIN.tempVar%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": true
+                },
+                "asyncWait": true
+              }
+            ]
+          },
+          {
+            "else": [
+              {
+                "objectType": "WriteToSymbol",
+                "active": true,
+                "symbolExpression": "%s%ADS.PLC1.MAIN.tempVar%/s%",
+                "value": {
+                  "objectType": "StaticValue",
+                  "valueType": "tchmi:general#/definitions/BOOL",
+                  "value": false
+                },
+                "asyncWait": true
+              }
+            ]
+          }
+        ],
+        "asyncWait": true
+      }
+    ]
+  }
+]</script>
+</div>
+<div id="TcHmiRecipeEdit_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="215" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="542" data-tchmi-top-unit="px" data-tchmi-width="446" data-tchmi-width-unit="px">
+</div>
+<div id="TcHmiTextbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Write to audittrail_1 on 'save' (coldbrew)" data-tchmi-top="236" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+<div id="TcHmiTextbox_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Recipe symbol endabled for auditTrail (tea)" data-tchmi-top="506" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
+<script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
+{
+  "top": 3,
+  "right": 3,
+  "bottom": 3,
+  "left": 3
+}
+</script>
+
+</div>
+</div>

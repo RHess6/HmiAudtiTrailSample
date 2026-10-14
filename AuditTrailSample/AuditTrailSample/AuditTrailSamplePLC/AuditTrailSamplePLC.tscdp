@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<DisabledProjects>
+	<Project Name="Untitled1">
+		<Configuration>TwinCAT HMI|Debug</Configuration>
+		<Configuration>TwinCAT HMI|Release</Configuration>
+	</Project>
+</DisabledProjects>

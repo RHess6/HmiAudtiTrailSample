@@ -1,0 +1,129 @@
+{
+  "$schema": "../../TcHmiSrv/schema/ExtensionSettings.Schema.json",
+  "version": "24.0.7.0",
+  "configVersion": "1.0.1.2",
+  "guid": "713EC6CF-3C7D-4061-BB8C-85C04825D1A4",
+  "visibility": "AlwaysShow",
+  "policies": [
+    "StrictPropertyValidation"
+  ],
+  "symbols": {
+    "ListSymbols": {
+      "readValue": {
+        "function": true
+      }
+    },
+    "GetSchema": {
+      "writeValue": {
+        "type": "string"
+      },
+      "readValue": {
+        "function": true
+      }
+    },
+    "Diagnostics": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "allOf": [
+          {
+            "function": true
+          },
+          {
+            "oneOf": [
+              {
+                "versions": [
+                  1.0
+                ],
+                "type": "object",
+                "properties": {
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "versions": [
+                  2.0
+                ],
+                "type": "object",
+                "properties": {
+                  "domainState": {
+                    "propertyOrder": 2,
+                    "type": "string",
+                    "enum": [
+                      "Good",
+                      "Bad"
+                    ]
+                  },
+                  "domainError": {
+                    "propertyOrder": 3,
+                    "type": "string",
+                    "format": "multiline"
+                  },
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "packageVersion": "24.0.7",
+  "productVersion": "24.0.7",
+  "signature": "LWDmi9xLZWQ8cP2yectUErvStxpB8pPP3gCS0hRpzEWy+cEVze5Hhu03u0efowWkXOZsPmAnZMabMLEpqiY4lbjui+O/L2OkU65lW592VWp5undHI/IXMi6xihJAsIiTlc8J9DKwrYETiV/b7COOGHywrB8H8ZogtR5EEcPsny1A/xz0ttEVxjJcLuOt4IJ3KoKOoCFX9IECETimcquQOsy+CTuVZELueVnBEldlLgFRwKrO2FV28MGCeT5LKgxTwbLhRRAI6NNFBIihQpNxOymgR0ow5kFlNiRTIyXClGWA9ZHyQj+nKAmnesZGoUW8ngF6L5B/DkVH7flY9DXu6w=="
+}

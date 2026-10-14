@@ -1,0 +1,91 @@
+{
+    "recipeList": {
+        "Cold Brew": {
+            "recipeTypeName": "coffee",
+            "values": {
+                "ADS.PLC1.gvl.coffees.ingredients": "coffee, ice, chocolate",
+                "ADS.PLC1.gvl.coffees.name": "cold brew",
+                "ADS.PLC1.gvl.coffees.price": 5.99
+            }
+        }
+    },
+    "recipeTypeList": {
+        "coffee": {
+            "members": {
+                "ADS.PLC1.gvl.coffees.ingredients": {
+                    "defaultValue": "coffee, water",
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.ingredients",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.coffees.name": {
+                    "defaultValue": "coffee",
+                    "enabled": true,
+                    "group": "",
+                    "order": 1,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.name",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.coffees.price": {
+                    "defaultValue": 5.99,
+                    "enabled": true,
+                    "group": "",
+                    "order": 2,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.coffees.price",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        },
+        "tea": {
+            "members": {
+                "ADS.PLC1.gvl.teas.ingredients": {
+                    "defaultValue": "tea, water",
+                    "enabled": true,
+                    "group": "",
+                    "order": 0,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.ingredients",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.teas.name": {
+                    "defaultValue": "tea",
+                    "enabled": true,
+                    "group": "",
+                    "order": 1,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.name",
+                    "unit": "",
+                    "version": 1.0
+                },
+                "ADS.PLC1.gvl.teas.price": {
+                    "defaultValue": 2.99,
+                    "enabled": true,
+                    "group": "",
+                    "order": 2,
+                    "schema": {},
+                    "symbol": "ADS.PLC1.gvl.teas.price",
+                    "unit": "",
+                    "version": 1.0
+                }
+            },
+            "options": {
+                "enabled": "None"
+            },
+            "recipeTypeNames": []
+        }
+    },
+    "recipeVersioningEnabled": false
+}

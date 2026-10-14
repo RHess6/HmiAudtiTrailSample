@@ -1,0 +1,129 @@
+{
+  "$schema": "../../TcHmiSrv/schema/ExtensionSettings.Schema.json",
+  "version": "24.0.7.0",
+  "configVersion": "1.0.1.2",
+  "guid": "713EC6CF-3C7D-4061-BB8C-85C04825D1A4",
+  "visibility": "AlwaysShow",
+  "policies": [
+    "StrictPropertyValidation"
+  ],
+  "symbols": {
+    "ListSymbols": {
+      "readValue": {
+        "function": true
+      }
+    },
+    "GetSchema": {
+      "writeValue": {
+        "type": "string"
+      },
+      "readValue": {
+        "function": true
+      }
+    },
+    "Diagnostics": {
+      "userGroups": [
+        "__SystemUsers"
+      ],
+      "readValue": {
+        "allOf": [
+          {
+            "function": true
+          },
+          {
+            "oneOf": [
+              {
+                "versions": [
+                  1.0
+                ],
+                "type": "object",
+                "properties": {
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              },
+              {
+                "versions": [
+                  2.0
+                ],
+                "type": "object",
+                "properties": {
+                  "domainState": {
+                    "propertyOrder": 2,
+                    "type": "string",
+                    "enum": [
+                      "Good",
+                      "Bad"
+                    ]
+                  },
+                  "domainError": {
+                    "propertyOrder": 3,
+                    "type": "string",
+                    "format": "multiline"
+                  },
+                  "targetSystems": {
+                    "type": "object",
+                    "configDescription": "descTargetSystems",
+                    "additionalProperties": {
+                      "type": "object",
+                      "properties": {
+                        "connectionState": {
+                          "propertyOrder": 1,
+                          "type": "string"
+                        },
+                        "connectError": {
+                          "propertyOrder": 2,
+                          "type": "integer"
+                        },
+                        "connectErrorMessage": {
+                          "propertyOrder": 3,
+                          "type": "string"
+                        },
+                        "availableModulesCount": {
+                          "propertyOrder": 4,
+                          "type": "integer"
+                        }
+                      },
+                      "required": [
+                        "connectionState"
+                      ]
+                    }
+                  }
+                }
+              }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "packageVersion": "24.0.7",
+  "productVersion": "24.0.7",
+  "signature": "jglp3hGWmt31+FSeMr64LmCt8ONSxv935CtV7JYwW4DgivRFQTlhJxWVvJvq8VXlwMhKpq5T5plp+rjexHfCNS3cD8IfptA3gma6DP/0jPnRTN7S8Cv3EsAEd9Ca46brW/mh9YgcKAkUBaH20rJv8AXphwRs44Lzi2T5ZKokc3XFVbVk1Wy9/MC5nwHU0kuHULGUr84mxGg3K+fGyPIKeP5lOKeJhT4kyuQa9D2DVz+wxnkrx8+PVbVPqsKdEkgO2fN0oJkkQcLRe2H+sqrVh857nTVoIMSnULVAOsrilgvB+ZCBIIVijZH03YHupThBbNW1cKTPXzpOgOoqjdQX2A=="
+}
