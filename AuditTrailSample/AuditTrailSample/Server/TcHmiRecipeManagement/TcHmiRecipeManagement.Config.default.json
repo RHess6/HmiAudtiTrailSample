@@ -5,7 +5,23 @@
             "values": {
                 "ADS.PLC1.gvl.coffees.ingredients": "coffee, ice, chocolate",
                 "ADS.PLC1.gvl.coffees.name": "cold brew",
-                "ADS.PLC1.gvl.coffees.price": 5.99
+                "ADS.PLC1.gvl.coffees.price": 5.25
+            }
+        },
+        "chai lattee": {
+            "recipeTypeName": "tea",
+            "values": {
+                "ADS.PLC1.gvl.teas.ingredients": "tea, water",
+                "ADS.PLC1.gvl.teas.name": "chai Tea lattee",
+                "ADS.PLC1.gvl.teas.price": 4.99
+            }
+        },
+        "testRecipe": {
+            "recipeTypeName": "coffee",
+            "values": {
+                "ADS.PLC1.gvl.coffees.ingredients": "coffee, water",
+                "ADS.PLC1.gvl.coffees.name": "coffee",
+                "ADS.PLC1.gvl.coffees.price": 5.98
             }
         }
     },

@@ -1,6 +1,6 @@
 <div id="Desktop" data-tchmi-type="TcHmi.Controls.System.TcHmiView" data-tchmi-top="0" data-tchmi-left="0" data-tchmi-width-mode="Content" data-tchmi-min-width="100" data-tchmi-min-width-unit="%" data-tchmi-height-mode="Content" data-tchmi-min-height="100" data-tchmi-min-height-unit="%">
   <div id="ViewDesktopBeckhoffLogo" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiImage" data-tchmi-src="Images/Beckhoff_Logo.svg" data-tchmi-left="20" data-tchmi-top="20" data-tchmi-width="194" data-tchmi-height="57"></div>
-<div id="TcHmiAuditTrailGrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.AuditTrailUtils.TcHmiAuditTrailGrid" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="647" data-tchmi-left-unit="px" data-tchmi-server-interval="1000" data-tchmi-show-menu-bar="True" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="1009" data-tchmi-width-unit="px">
+<div id="TcHmiAuditTrailGrid_1" data-tchmi-type="TcHmi.Controls.Beckhoff.AuditTrailUtils.TcHmiAuditTrailGrid" data-tchmi-height="400" data-tchmi-height-unit="px" data-tchmi-left="476" data-tchmi-left-unit="px" data-tchmi-server-interval="1000" data-tchmi-show-menu-bar="True" data-tchmi-top="20" data-tchmi-top-unit="px" data-tchmi-width="1009" data-tchmi-width-unit="px">
 <script data-tchmi-target-attribute="data-tchmi-filter" type="application/json">
 []
 </script>
@@ -121,7 +121,7 @@
 </script>
 
 </div>
-<div id="TcHmiRecipeEdit_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="215" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="272" data-tchmi-top-unit="px" data-tchmi-width="446" data-tchmi-width-unit="px">
+<div id="TcHmiRecipeEdit_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="198" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="248" data-tchmi-top-unit="px" data-tchmi-width="330" data-tchmi-width-unit="px">
 
 <script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
 [
@@ -228,7 +228,7 @@
           "const recipe = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
           "const user = TcHmi.Symbol.read('currentUser', TcHmi.SymbolType.Internal)",
           "const groups = TcHmi.Symbol.read('currentUserGroup', TcHmi.SymbolType.Internal)",
-          "",
+          "console.log(ctx);",
           "TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
           "    {",
           "        name: 'Recipe selected to be edited',",
@@ -359,7 +359,8 @@
 </div>
 <div id="TcHmiButton_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiButton" data-tchmi-height="50" data-tchmi-height-unit="px" data-tchmi-left="224" data-tchmi-left-unit="px" data-tchmi-text="Get Recipe List" data-tchmi-top="27" data-tchmi-top-unit="px" data-tchmi-width="100" data-tchmi-width-unit="px" data-tchmi-word-wrap="True">
 
-<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">[
+<script data-tchmi-target-attribute="data-tchmi-trigger" type="application/json">
+[
   {
     "event": "%ctx%owner::Id|EventRegistrationMode=Resolve%/ctx%.onPressed",
     "actions": [
@@ -373,35 +374,11 @@
           "symbolExpression": "%s%TcHmiRecipeManagement.Config::recipeList%/s%"
         },
         "asyncWait": true
-      },
-      {
-        "objectType": "JavaScript",
-        "active": true,
-        "sourceLines": [
-          "//const recipes = TcHmi.Symbol.read('recipe', TcHmi.SymbolType.Internal)",
-          "",
-          "//console.log(recipes)",
-          "",
-          "/*TcHmi.Server.AuditTrail.createAuditLogEntryEx(",
-          "    {",
-          "        name: 'recipe saved',",
-          "        contextDomain: 'TcHmiRecipeManagement',",
-          "        comment: '',",
-          "        data: ctx.args[0]",
-          "    },",
-          "    null,",
-          "    (data) => {",
-          "    }",
-          ");",
-          "",
-          "*/"
-        ],
-        "asyncWait": true,
-        "waitMode": "Synchronous"
       }
     ]
   }
-]</script>
+]
+</script>
 </div>
 <div id="TcHmiTextbox_1" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="115" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-top="87" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="330" data-tchmi-width-unit="px" data-tchmi-text="%i%recipe%/i%" data-tchmi-text-horizontal-alignment="Center" data-tchmi-word-wrap="True" data-tchmi-multiline="True">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
@@ -477,9 +454,9 @@
   }
 ]</script>
 </div>
-<div id="TcHmiRecipeEdit_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="215" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="542" data-tchmi-top-unit="px" data-tchmi-width="446" data-tchmi-width-unit="px">
+<div id="TcHmiRecipeEdit_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiRecipeEdit" data-tchmi-height="201" data-tchmi-height-unit="px" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-top="492" data-tchmi-top-unit="px" data-tchmi-width="330" data-tchmi-width-unit="px">
 </div>
-<div id="TcHmiTextbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Write to audittrail_1 on 'save' (coldbrew)" data-tchmi-top="236" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
+<div id="TcHmiTextbox_2" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Write to audittrail_1 on 'save' (coldbrew)" data-tchmi-top="212" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
@@ -490,7 +467,7 @@
 </script>
 
 </div>
-<div id="TcHmiTextbox_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Recipe symbol endabled for auditTrail (tea)" data-tchmi-top="506" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
+<div id="TcHmiTextbox_3" data-tchmi-type="TcHmi.Controls.Beckhoff.TcHmiTextbox" data-tchmi-height="26" data-tchmi-height-unit="px" data-tchmi-horizontal-scroll="Auto" data-tchmi-left="20" data-tchmi-left-unit="px" data-tchmi-reset-to-last-valid-value="True" data-tchmi-text="Recipe symbol endabled for auditTrail (tea)" data-tchmi-top="456" data-tchmi-top-unit="px" data-tchmi-vertical-scroll="Auto" data-tchmi-width="256" data-tchmi-width-unit="px" data-tchmi-is-read-only="True">
 <script data-tchmi-target-attribute="data-tchmi-content-padding" type="application/json">
 {
   "top": 3,
